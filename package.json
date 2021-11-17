@@ -1,0 +1,49 @@
+{
+  "name": "test_lang",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "nodemon --watch main.js --exec electron .",
+    "build-icon": "electron-icon-builder --input=./static/img/myicon.jpg --output=build --flatten",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-xlsx": "^0.17.2"
+  },
+  "devDependencies": {
+    "electron": "^11.0.4",
+    "electron-builder": "^22.13.1"
+  },
+  "build": {
+    "files": [
+      "package.json",
+      "main.js",
+      "index.html",
+      "main.html",
+      "static"
+    ],
+    "appId": "com.examtest.lang.app",
+    "productName": "小浪考试系统",
+    "copyright": "Copyright © 2021",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "language": "2052",
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
